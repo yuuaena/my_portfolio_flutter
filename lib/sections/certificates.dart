@@ -10,28 +10,28 @@ class CertificatesSection extends StatelessWidget {
       {
         'title': 'Yala Technical College',
         'issuer': 'English In And Out Campus School Program',
-        'image': 'assets/images/certi22082017.jpg',
+        'image': 'assets/images/certi/certi22082017.jpg',
         'year': '2017'
       },
       {
         'title': 'มหาวิทยาลัยนราธิวาสราชนครินทร์',
         'issuer':
         'การแข่งขันทักษะการประกอบคอมพิวเตอร์ ติดตั้งระบบปฏิบัติการและซอฟต์แวร์',
-        'image': 'assets/images/certi6022018.jpg',
+        'image': 'assets/images/certi/certi6022018.jpg',
         'year': '2018'
       },
       {
         'title': 'สำนักงานคณะกรรมการการอาชีวศึกษา',
         'issuer':
         'ร่วมจัดแสดงนิทรรศการ เมืองเทคโนโลยี นวัตกรรม สิ่งประดิษฐ์ และหุ่นยนต์',
-        'image': 'assets/images/certi26122018.jpg',
+        'image': 'assets/images/certi/certi26122018.jpg',
         'year': '2018'
       },
       {
         'title': 'กสท โทรคมนาคม',
         'issuer':
         'ฝึกงาน ณ แผนกปฏิบัติการโทรคมนาคม สำนักงานบริการลูกค้า กสท ยะลา',
-        'image': 'assets/images/certi12072019.jpg',
+        'image': 'assets/images/certi/certi12072019.jpg',
         'year': '2019'
       },
     ];
