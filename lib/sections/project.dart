@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../widgets/project_card.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-
 import '../widgets/project_card.dart';
 
 class ProjectsSection extends StatelessWidget {
@@ -26,7 +24,7 @@ class ProjectsSection extends StatelessWidget {
         'images': [],
       },
       {
-        'title': 'Netword Simulation',
+        'title': 'Network Simulation',
         'description':
         'Designed and configured network systems using Cisco Packet Tracer.'
         ' Created routing and switching simulations for academic projects',
@@ -45,6 +43,15 @@ class ProjectsSection extends StatelessWidget {
         'ระบบหาผลลัพธ์ของข้อมูล ด้วยการใช้ SQL',
         'link': '',
         'images': [
+          'assets/images/project/Project_SQL/Screenshot 2026-01-02 195932.png',
+          'assets/images/project/Project_SQL/Screenshot 2026-01-02 220000.png',
+          'assets/images/project/Project_SQL/Screenshot 2026-01-02 221904.png',
+          'assets/images/project/Project_SQL/Screenshot 2026-01-05 213726.png',
+          'assets/images/project/Project_SQL/Screenshot 2026-01-05 215418.png',
+          'assets/images/project/Project_SQL/Screenshot 2026-01-05 215821.png',
+          'assets/images/project/Project_SQL/Screenshot 2026-01-05 220839.png',
+          'assets/images/project/Project_SQL/Screenshot 2026-01-05 222526.png',
+          'assets/images/project/Project_SQL/Screenshot 2026-01-05 222847.png',
         ],
       },
       {

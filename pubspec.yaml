@@ -48,6 +48,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
+  flutter_staggered_grid_view: ^0.7.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -66,7 +67,8 @@ flutter:
     - assets/images/certi/
     - assets/images/project/Netword/
     - assets/images/project/LMS/
-#    - assets/icons/
+    - assets/images/project/Project_SQL/
+    - assets/icons/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

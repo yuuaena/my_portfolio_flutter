@@ -6,27 +6,38 @@ class AboutSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final isMobile = width < 768;
+
     return Container(
       width: double.infinity,
-      color: const Color(0xFFF8FAFC), // สีพื้นอ่อน ดูสะอาดและสบายตา
-      padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 40),
+      color: const Color(0xFFF8FAFC),
+      padding: EdgeInsets.symmetric(
+        vertical: isMobile ? 50 : 80,
+        horizontal: isMobile ? 20 : 40,
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // รูปโปรไฟล์
-          const CircleAvatar(
-            radius: 65,
-            backgroundImage: AssetImage('assets/images/profile/profile.jpg'),
-          ).animate().scale(duration: 600.ms).fadeIn(duration: 400.ms),
+          CircleAvatar(
+            radius: isMobile ? 50 : 65,
+            backgroundImage:
+            const AssetImage('assets/images/profile/profile.jpg'),
+          )
+              .animate()
+              .scale(duration: 600.ms)
+              .fadeIn(duration: 400.ms),
 
-          const SizedBox(height: 25),
+          SizedBox(height: isMobile ? 20 : 25),
 
           // ชื่อ
           Text(
             'รอสนัน บาฮา',
+            textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.headlineSmall?.copyWith(
               fontWeight: FontWeight.bold,
-              fontSize: 28,
+              fontSize: isMobile ? 22 : 28,
               color: const Color(0xFF1E293B),
               letterSpacing: 1.1,
             ),
@@ -36,39 +47,47 @@ class AboutSection extends StatelessWidget {
 
           // ตำแหน่ง
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+            padding: EdgeInsets.symmetric(
+              horizontal: isMobile ? 14 : 16,
+              vertical: 6,
+            ),
             decoration: BoxDecoration(
               color: Colors.tealAccent.withOpacity(0.2),
               borderRadius: BorderRadius.circular(20),
             ),
-            child: const Text(
+            child: Text(
               'Software Engineer',
               style: TextStyle(
                 color: Colors.teal,
                 fontWeight: FontWeight.w600,
-                fontSize: 16,
+                fontSize: isMobile ? 14 : 16,
               ),
             ),
           ),
 
-          const SizedBox(height: 25),
+          SizedBox(height: isMobile ? 20 : 25),
 
           // คำอธิบาย
           ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 800),
-            child: const Text(
+            constraints: BoxConstraints(
+              maxWidth: isMobile ? double.infinity : 800,
+            ),
+            child: Text(
               'บัณฑิตจบใหม่สาขาวิศวกรรมคอมพิวเตอร์ ที่มุ่งมั่นสู่สายอาชีพ Software Engineer '
                   'มีประสบการณ์ในการพัฒนาเว็บและระบบหลังบ้าน (Web & Backend Development) โดยใช้ Java, Spring Boot, Angular และ PostgreSQL '
                   'มีทักษะในการสร้าง RESTful API, จัดการฐานข้อมูล และพัฒนาแอปพลิเคชันที่ใช้งานง่าย '
                   'หลงใหลในการสร้างซอฟต์แวร์ที่มีประสิทธิภาพ และพร้อมเติบโตไปพร้อมกับทีมพัฒนาในสภาพแวดล้อมการทำงานที่ร่วมมือกันอย่างมืออาชีพ',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 16,
+                fontSize: isMobile ? 14.5 : 16,
                 height: 1.8,
-                color: Color(0xFF475569),
+                color: const Color(0xFF475569),
               ),
             ),
-          ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+          )
+              .animate()
+              .fadeIn(duration: 600.ms)
+              .slideY(begin: 0.2, end: 0),
         ],
       ),
     );
@@ -205,5 +224,4 @@ class AboutSection extends StatelessWidget {
 //     curve: Curves.easeInOut,
 //   );
 // }
-
 

@@ -2,61 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
-// class ContactSection extends StatelessWidget {
-//   const ContactSection({super.key});
-//
-//   void _openUrl(String url) async {
-//     final uri = Uri.parse(url);
-//     if (await canLaunchUrl(uri)) {
-//       await launchUrl(uri);
-//     }
-//   }
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       color: const Color(0xFFEEF2FB),
-//       width: double.infinity,
-//       padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 40),
-//       child: Column(
-//         children: [
-//           Text(
-//             '📞 Contact Me',
-//             style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-//               fontWeight: FontWeight.bold,
-//             ),
-//           ),
-//           const SizedBox(height: 20),
-//           const Text('หากสนใจร่วมงานหรือติดต่อพูดคุย สามารถติดต่อได้ที่'),
-//           const SizedBox(height: 20),
-//           Wrap(
-//             spacing: 15,
-//             children: [
-//               ElevatedButton.icon(
-//                 onPressed: () => _openUrl('mailto:rosnan.baha@gmail.com'),
-//                 icon: const Icon(Icons.email),
-//                 label: const Text('Email'),
-//               ),
-//               ElevatedButton.icon(
-//                 onPressed: () =>
-//                     _openUrl('https://github.com/yuuaena'),
-//                 icon: const Icon(Icons.code),
-//                 label: const Text('GitHub'),
-//               ),
-//               ElevatedButton.icon(
-//                 onPressed: () =>
-//                     _openUrl('https://www.linkedin.com/in/rosnan-baha-tech/'),
-//                 icon: const Icon(Icons.link),
-//                 label: const Text('LinkedIn'),
-//               ),
-//             ],
-//           ).animate().fadeIn(duration: 400.ms),
-//         ],
-//       ),
-//     );
-//   }
-// }
-
 class ContactSection extends StatelessWidget {
   const ContactSection({super.key});
 
@@ -165,48 +110,4 @@ class ContactSection extends StatelessWidget {
     );
   }
 }
-
-// class ContactSection extends StatelessWidget {
-//   const ContactSection({super.key});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       height: 350,
-//       width: double.infinity,
-//       decoration: const BoxDecoration(
-//         gradient: LinearGradient(
-//           colors: [Color(0xFF0F2027), Color(0xFF203A43), Color(0xFF2C5364)],
-//           begin: Alignment.topLeft,
-//           end: Alignment.bottomRight,
-//         ),
-//       ),
-//       child: Center(
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: const [
-//             Text(
-//               "📬 Contact Me",
-//               style: TextStyle(
-//                 fontSize: 26,
-//                 fontWeight: FontWeight.bold,
-//                 color: Colors.tealAccent,
-//               ),
-//             ),
-//             SizedBox(height: 20),
-//             Text(
-//               "📧 Email: thanakorn.dev@gmail.com\n🌐 GitHub: github.com/yourprofile\n💼 LinkedIn: linkedin.com/in/yourprofile",
-//               textAlign: TextAlign.center,
-//               style: TextStyle(
-//                 color: Colors.white70,
-//                 fontSize: 16,
-//                 height: 1.6,
-//               ),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
 

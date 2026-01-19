@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 
 class NavBar extends StatelessWidget {
   final Function(String) onItemSelected;
+  final String selectedItem;
 
-  const NavBar({super.key, required this.onItemSelected});
+  const NavBar({
+    super.key,
+    required this.onItemSelected,
+    required this.selectedItem,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -12,12 +17,16 @@ class NavBar extends StatelessWidget {
       'skills': 'Skills',
       'projects': 'Projects',
       'certificates': 'Certificates',
+      'hobby': 'Hobby',
       'contact': 'Contact',
     };
 
+    final isMobile = MediaQuery.of(context).size.width < 768;
+
     return Container(
+      height: 70,
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       color: const Color(0xFF161B22),
-      padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -29,24 +38,59 @@ class NavBar extends StatelessWidget {
               color: Colors.tealAccent,
             ),
           ),
-          Row(
-            children: items.entries.map((entry) {
-              return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 5),
-                child: TextButton(
-                  onPressed: () => onItemSelected(entry.key),
-                  child: Text(
-                    entry.value,
-                    style: const TextStyle(
-                      color: Colors.white70,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
+
+          /// Desktop Menu
+          if (!isMobile)
+            Row(
+              children: items.entries.map((entry) {
+                final isActive = selectedItem == entry.key;
+
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 6),
+                  child: TextButton(
+                    onPressed: () => onItemSelected(entry.key),
+                    child: Text(
+                      entry.value,
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight:
+                        isActive ? FontWeight.w600 : FontWeight.w500,
+                        color: isActive
+                            ? Colors.tealAccent
+                            : Colors.white70,
+                      ),
                     ),
                   ),
-                ),
-              );
-            }).toList(),
-          ),
+                );
+              }).toList(),
+            ),
+
+          /// Mobile Menu
+          if (isMobile)
+            PopupMenuButton<String>(
+              icon: const Icon(Icons.menu, color: Colors.white),
+              color: const Color(0xFF161B22),
+              onSelected: onItemSelected,
+              itemBuilder: (context) {
+                return items.entries.map((entry) {
+                  final isActive = selectedItem == entry.key;
+
+                  return PopupMenuItem<String>(
+                    value: entry.key,
+                    child: Text(
+                      entry.value,
+                      style: TextStyle(
+                        color: isActive
+                            ? Colors.tealAccent
+                            : Colors.white,
+                        fontWeight:
+                        isActive ? FontWeight.bold : FontWeight.normal,
+                      ),
+                    ),
+                  );
+                }).toList();
+              },
+            ),
         ],
       ),
     );

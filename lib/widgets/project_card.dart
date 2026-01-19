@@ -49,42 +49,67 @@ class ProjectCard extends StatelessWidget {
             ),
             const SizedBox(height: 25),
 
-            // Buttons aligned right
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                ElevatedButton.icon(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.black,
-                    foregroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                  icon: const Icon(Icons.photo_library_outlined),
-                  label: const Text("เพิ่มเติม"),
-                  onPressed: () => _showImagesPopup(context),
+        Wrap(
+          alignment: WrapAlignment.end,
+          spacing: 10,
+          runSpacing: 10,
+          children: [
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.black,
+                foregroundColor: Colors.white,
+                minimumSize: const Size(0, 44),
+                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
                 ),
-                const SizedBox(width: 10),
-                ElevatedButton.icon(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.black,
-                    foregroundColor: Colors.tealAccent,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
+              ),
+              onPressed: () => _showImagesPopup(context),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: const [
+                  Icon(
+                    Icons.photo_library_outlined,
+                    size: 18,
+                    color: Colors.white,
                   ),
-                  icon: const Icon(Icons.code),
-                  label: const Text("ดูโค้ด"),
-                  onPressed: () async {
-                    final uri = Uri.parse(link);
-                    if (await canLaunchUrl(uri)) {
-                      await launchUrl(uri);
-                    }
-                  },
-                ),
-              ],
+                  SizedBox(width: 6),
+                  Text("เพิ่มเติม"),
+                ],
+              ),
             ),
+
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.black,
+                foregroundColor: Colors.tealAccent,
+                minimumSize: const Size(0, 44),
+                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+              onPressed: () async {
+                final uri = Uri.parse(link);
+                if (await canLaunchUrl(uri)) {
+                  await launchUrl(uri);
+                }
+              },
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: const [
+                  Icon(
+                    Icons.code,
+                    size: 18,
+                    color: Colors.tealAccent,
+                  ),
+                  SizedBox(width: 6),
+                  Text("ดูโค้ด"),
+                ],
+              ),
+            ),
+          ],
+        ),
           ],
         ),
       ),
