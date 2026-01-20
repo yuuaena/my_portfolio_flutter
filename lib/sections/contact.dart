@@ -33,6 +33,7 @@ class ContactSection extends StatelessWidget {
           const SizedBox(height: 20),
           const Text(
             'หากสนใจร่วมงานหรือติดต่อพูดคุย สามารถติดต่อได้ที่',
+            textAlign: TextAlign.center,
             style: TextStyle(
               color: Colors.white70,
               fontSize: 16,
@@ -40,12 +41,17 @@ class ContactSection extends StatelessWidget {
           ),
           const SizedBox(height: 30),
 
-          // ปุ่ม Contact สวย ๆ
           Wrap(
             spacing: 20,
             runSpacing: 15,
             alignment: WrapAlignment.center,
             children: [
+              _buildContactButton(
+                icon: Icons.phone_android_rounded,
+                label: 'Phone',
+                color: Colors.orangeAccent,
+                onTap: () => _openUrl('tel:+66936941262'),
+              ),
               _buildContactButton(
                 icon: Icons.email,
                 label: 'Email',
@@ -68,9 +74,8 @@ class ContactSection extends StatelessWidget {
           ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.2, end: 0),
           const SizedBox(height: 40),
 
-          // Footer เล็ก ๆ
           const Text(
-            '© 2025 Rosnan Baha | Built with Flutter 💙',
+            '© 2026 Rosnan Baha | Built with Flutter 💙',
             style: TextStyle(
               color: Colors.white38,
               fontSize: 14,
@@ -98,7 +103,7 @@ class ContactSection extends StatelessWidget {
         ),
       ),
       style: ElevatedButton.styleFrom(
-        backgroundColor: const Color(0xFF1E242D), // สีเทาเข้มกว่า background
+        backgroundColor: const Color(0xFF1E242D),
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),

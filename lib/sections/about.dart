@@ -30,8 +30,6 @@ class AboutSection extends StatelessWidget {
               .fadeIn(duration: 400.ms),
 
           SizedBox(height: isMobile ? 20 : 25),
-
-          // ชื่อ
           Text(
             'รอสนัน บาฮา',
             textAlign: TextAlign.center,
@@ -74,7 +72,7 @@ class AboutSection extends StatelessWidget {
             ),
             child: Text(
               'บัณฑิตจบใหม่สาขาวิศวกรรมคอมพิวเตอร์ ที่มุ่งมั่นสู่สายอาชีพ Software Engineer '
-                  'มีประสบการณ์ในการพัฒนาเว็บและระบบหลังบ้าน (Web & Backend Development) โดยใช้ Java, Spring Boot, Angular และ PostgreSQL '
+                  'มีประสบการณ์ในการพัฒนาเว็บและระบบหลังบ้าน (Web & Backend Development) โดยใช้ภาษา Java, JavaScript, Dart, และ SQL '
                   'มีทักษะในการสร้าง RESTful API, จัดการฐานข้อมูล และพัฒนาแอปพลิเคชันที่ใช้งานง่าย '
                   'หลงใหลในการสร้างซอฟต์แวร์ที่มีประสิทธิภาพ และพร้อมเติบโตไปพร้อมกับทีมพัฒนาในสภาพแวดล้อมการทำงานที่ร่วมมือกันอย่างมืออาชีพ',
               textAlign: TextAlign.center,

@@ -3,6 +3,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../widgets/project_card.dart';
 
+
 class ProjectsSection extends StatelessWidget {
   const ProjectsSection({super.key});
 
@@ -30,11 +31,11 @@ class ProjectsSection extends StatelessWidget {
         ' Created routing and switching simulations for academic projects',
         'link': '',
         'images': [
-          'assets/images/project/Netword/Screenshot 2025-11-08 082538.png',
-          'assets/images/project/Netword/Screenshot 2025-11-08 082640.png',
-          'assets/images/project/Netword/Screenshot 2025-11-08 082738.png',
-          'assets/images/project/Netword/Screenshot 2025-11-08 082858.png',
-          'assets/images/project/Netword/Screenshot 2025-11-08 083005.png',
+          'assets/images/project/Network/Screenshot 2025-11-08 082538.png',
+          'assets/images/project/Network/Screenshot 2025-11-08 082640.png',
+          'assets/images/project/Network/Screenshot 2025-11-08 082738.png',
+          'assets/images/project/Network/Screenshot 2025-11-08 082858.png',
+          'assets/images/project/Network/Screenshot 2025-11-08 083005.png',
         ],
       },
       {

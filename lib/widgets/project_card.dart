@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+
 class ProjectCard extends StatelessWidget {
   final String title;
   final String description;
@@ -65,20 +66,22 @@ class ProjectCard extends StatelessWidget {
                 ),
               ),
               onPressed: () => _showImagesPopup(context),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: const [
-                  Icon(
-                    Icons.photo_library_outlined,
-                    size: 18,
-                    color: Colors.white,
-                  ),
-                  SizedBox(width: 6),
-                  Text("เพิ่มเติม"),
-                ],
+              child: Material(
+                color: Colors.transparent,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.photo,
+                      size: 18,
+                      color: Colors.white,
+                    ),
+                    const SizedBox(width: 6),
+                    const Text("เพิ่มเติม"),
+                  ],
+                ),
               ),
             ),
-
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.black,
@@ -95,17 +98,20 @@ class ProjectCard extends StatelessWidget {
                   await launchUrl(uri);
                 }
               },
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: const [
-                  Icon(
-                    Icons.code,
-                    size: 18,
-                    color: Colors.tealAccent,
-                  ),
-                  SizedBox(width: 6),
-                  Text("ดูโค้ด"),
-                ],
+              child: Material(
+                color: Colors.transparent,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.code,
+                      size: 18,
+                      color: Colors.tealAccent,
+                    ),
+                    const SizedBox(width: 6),
+                    const Text("ดูโค้ด"),
+                  ],
+                ),
               ),
             ),
           ],
@@ -144,7 +150,9 @@ class ProjectCard extends StatelessWidget {
                     ),
                   ),
                   IconButton(
-                    icon: const Icon(Icons.close, color: Colors.white70),
+                    icon: const Icon(
+                        Icons.close,
+                        color: Colors.white70),
                     onPressed: () => Navigator.pop(context),
                   ),
                 ],
