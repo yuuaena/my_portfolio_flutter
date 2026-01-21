@@ -16,7 +16,7 @@ jobs:
           channel: stable
 
       - run: flutter pub get
-      - run: flutter build web --release --base-href /my_portfolio/
+      - run: flutter build web --release --base-href /my_portfolio_flutter/
 
       - uses: peaceiris/actions-gh-pages@v4
         with:
