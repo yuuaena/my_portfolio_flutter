@@ -126,7 +126,7 @@ class ProjectCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final bool hasLink = link.isNotEmpty;
     final bool hasImages = images.isNotEmpty;
-
+    /////////////////
     return Card(
       color: Colors.white,
       elevation: 4,
@@ -301,7 +301,6 @@ class ProjectCard extends StatelessWidget {
                                     ],
                                   ),
                                 ),
-
                                 /// ปุ่ม X ปิด GridView
                                 Positioned(
                                   right: 10,
