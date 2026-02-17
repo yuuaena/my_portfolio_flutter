@@ -23,7 +23,7 @@ class AboutSection extends StatelessWidget {
           CircleAvatar(
             radius: isMobile ? 50 : 65,
             backgroundImage:
-            const AssetImage('assets/images/profile/profile.jpg'),
+            const AssetImage('assets/images/profile/profile.webp'),
           )
               .animate()
               .scale(duration: 600.ms)
